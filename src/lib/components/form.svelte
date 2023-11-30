@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
   import { Button, Label, Input, Textarea } from "flowbite-svelte";
+
+  export let isEdition: boolean;
 </script>
 
 <form class="flex flex-col space-y-6" action="#">
@@ -14,7 +16,6 @@
     <span>Description</span>
     <Textarea type="text" name="description" />
   </Label>
-  
+
   <Button type="submit" class="w-full1">Save</Button>
-  
 </form>
