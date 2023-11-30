@@ -34,7 +34,7 @@ const loginUser = async (formData: any) => {
     });
     return {
       ...formData,
-      accessToken: response.accessToken,
+      accessToken: response.access_token,
       status: StatusCodes.OK,
     };
   } catch (e: any) {

@@ -10,9 +10,10 @@ interface LoginRequestData {
   password: FormDataEntryValue | null;
 }
 
+// This is because the backend returns in snake_case forcefully
 interface LoginResponseData {
-  accessToken: string;
-  tokenType: string;
+  access_token: string;
+  token_type: string;
 }
 
 interface MeResponseData {
