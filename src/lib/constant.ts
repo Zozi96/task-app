@@ -1,6 +1,7 @@
 import { PRIVATE_BACKEND } from "$env/static/private";
 
 export const backendUrl: string = PRIVATE_BACKEND;
+export const genericApiPrefix: string = `${backendUrl}/api`;
 
 export enum ContentType {
   JSON = "application/json",
@@ -12,5 +13,5 @@ export const JWTCookieOptions = {
   path: "/",
   maxAge: 60 * 60 * 24 * 7, // 1 week
   httpOnly: true,
-  sameSite: 'strict',
+  sameSite: "strict",
 };

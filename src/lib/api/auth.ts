@@ -16,11 +16,14 @@ interface LoginResponseData {
   token_type: string;
 }
 
-interface MeResponseData {
+export interface MeResponseData {
+  id: number;
   email: string;
+  firstName: string;
+  lastName: string;
 }
 
-export class AuthApiHandler {
+class AuthApiHandler {
   public static async login(
     userData: LoginRequestData
   ): Promise<LoginResponseData> {
@@ -36,3 +39,5 @@ export class AuthApiHandler {
     return response.data;
   }
 }
+
+export default AuthApiHandler;

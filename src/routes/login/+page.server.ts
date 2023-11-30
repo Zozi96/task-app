@@ -2,7 +2,7 @@ import type { Actions } from "./$types";
 import * as zod from "zod";
 import { StatusCodes } from "http-status-codes";
 
-import { AuthApiHandler } from "$lib/api/auth";
+import AuthApiHandler from "$lib/api/auth";
 import { JWTCookieOptions } from "$lib/constant";
 import { redirect } from "@sveltejs/kit";
 
