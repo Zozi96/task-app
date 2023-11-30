@@ -11,8 +11,8 @@
   import type { Task } from "$lib/api/task";
   import Form from "$lib/components/form.svelte";
   let formModal: boolean = false;
-  let isEdition: boolean = false;
   export let tasks: Task[];
+  let task: Task | null = null;
 </script>
 
 <div class="flex flex-col justify-center items-center">
@@ -31,7 +31,7 @@
             class="font-medium text-emerald-600 hover:underline dark:text-primary-500"
             on:click={() => {
               formModal = true;
-              isEdition = false;
+              task = null;
             }}>Add New Task</button
           >
         </TableHeadCell>
@@ -46,7 +46,7 @@
                 class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 on:click={() => {
                   formModal = true;
-                  isEdition = true;
+                  task = item;
                 }}>Edit</button
               >
               <button
@@ -62,5 +62,5 @@
 </div>
 
 <Modal bind:open={formModal} size="xs" autoclose={false} class="w-full">
-  <Form isEdition={isEdition}></Form>
+  <Form {task}></Form>
 </Modal>
